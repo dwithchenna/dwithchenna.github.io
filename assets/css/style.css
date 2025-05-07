@@ -1073,10 +1073,22 @@ textarea.form-input {
 \*-----------------------------------*/
 
 .blog-posts-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  margin-bottom: 30px;
+  display: block;
+}
+
+.blog-post-item {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .blog-posts-list {
+    display: block;
+  }
+  
+  .blog-post-item {
+    width: 100%;
+  }
 }
 
 .blog-post-item {
@@ -1163,10 +1175,4 @@ textarea.form-input {
 
 .btn-link ion-icon {
   font-size: 16px;
-}
-
-@media (min-width: 768px) {
-  .blog-posts-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
