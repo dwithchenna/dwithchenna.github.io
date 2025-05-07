@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dwith Chenna | MTS Product Engineer, AI Inference</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+
+  <!-- custom css link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Custom additional styles -->  
+  <style>
+    /* Add some subtle animations */
+    .service-item, .timeline-item, .project-item {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .service-item:hover {
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 150, 0.1);
+    }
+    
+    .timeline-item:hover, .project-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 150, 0.1);
+    }
+    
+    /* Add a subtle gradient border to images */
+    .avatar-box img, .project-img {
+      border: 2px solid transparent;
+      background-clip: padding-box;
+      background-image: linear-gradient(to right, #0057b8, #004094);
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #f5f5f5;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #0057b8;
+      border-radius: 4px;
+    }
+    
+    /* Service items styling */
+    .service-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .service-item {
+      border-left: 4px solid #0057b8;
+      border-radius: 4px;
+      background: #f9f9f9;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 150, 0.05);
+    }
+    
+    .service-item::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(135deg, transparent 50%, #0057b8 50%);
+    }
+    
+    .navbar-link {
+      color: #0057b8 !important;
+      font-weight: 500;
+    }
+    
+    .navbar-link.active {
+      color: #004094 !important;
+      font-weight: 600;
+    }
+    
+    .navbar-link.active::after {
+      background: linear-gradient(to right, #0057b8, #004094);
+    }
+    
+    /* Override dark theme with light theme */
+    .sidebar, article {
+      background: white;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 5px 15px rgba(0, 0, 150, 0.05);
+    }
+    
+    .separator {
+      background: #e0e0e0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box" style="position: relative; overflow: hidden; border-radius: var(--radius-20); box-shadow: 0 5px 15px rgba(0, 0, 150, 0.1);">
+          <img src="./assets/images/profile.jpg" alt="Dwith Chenna" width="100" style="transform: scale(1.1);">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(0, 87, 184, 0.1), transparent); z-index: 1;"></div>
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Dwith Chenna">Dwith Chenna</h1>
+          <p class="title" style="color: #0057b8; font-weight: 500; background: #f5f5f5; padding: 4px 12px; border-radius: 4px;">MTS Product Engineer, AI Inference</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:cyndwith@gmail.com" class="contact-link">cyndwith@gmail.com</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+              <a href="tel:+14152749837" class="contact-link">+1 (352) 745 9837</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+              <address> San Jose, CA 95133</address>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="globe-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Social</p>
+              <ul class="social-list">
+                <li class="social-item">
+                  <a href="https://linkedin.com/in/dwithchenna" target="_blank" class="social-link">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                  </a>
+                </li>
+                <li class="social-item">
+                  <a href="https://github.com/dwithchenna" target="_blank" class="social-link">
+                    <ion-icon name="logo-github"></ion-icon>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+      </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+      <!-- NAVBAR -->
+      <nav class="navbar" style="background: white; box-shadow: 0 2px 10px rgba(0, 0, 150, 0.05); border: 1px solid #e0e0e0;">
+        <ul class="navbar-list" style="display: flex; justify-content: center; gap: 20px;">
+          <li class="navbar-item">
+            <button class="navbar-link active" data-nav-link="about">About</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link="resume">Resume</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link="blogs">Blogs</button>
+          </li>
+          <!-- Projects tab hidden for now
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link="projects">Projects</button>
+          </li>
+          -->
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link="contact">Contact</button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- ABOUT -->
+      <article class="about active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title" style="position: relative; display: inline-block;">
+            <span style="color: #0057b8; text-transform: uppercase; letter-spacing: 1px;">About Me</span>
+            <span style="position: absolute; bottom: -5px; left: 0; width: 50px; height: 3px; background: linear-gradient(to right, #0057b8, #004094);"></span>
+          </h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            Hello, and welcome! I'm Dwith Chenna, an R&D professional focused on algorithm development and optimization in computer vision, deep learning, and Edge AI. With over a decade of international experience, I specialize in enhancing performance and efficiency of deep learning models on constrained hardware.
+          </p>
+          <p>
+            In my career journey, I've had the privilege of impactful roles at prominent organizations like the Center of Devices and Radiology Health (CDRH) at the FDA, Cadence Design Systems, Magic Leap and currently at AMD. Solving the complex challenges of developing and optimizing deep learning models on resource-constrained hardware, such as Digital Signal Processors (DSPs) and Neural Processing Unit (NPU).
+          </p>
+          <p>
+            I am actively involved in the tech community, participating in conferences, reviewing research, and speaking at industry events. Thanks for stopping by—let's explore the future of technology together!
+          </p>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="service">
+          <h3 class="h3 service-title" style="position: relative; display: inline-block;">
+            <span style="color: #0057b8; text-transform: uppercase; letter-spacing: 1px;">What I Do</span>
+            <span style="position: absolute; bottom: -5px; left: 0; width: 40px; height: 2px; background: linear-gradient(to right, #0057b8, #004094);"></span>
+          </h3>
+          <ul class="service-list">
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">AI Inference Optimization</h4>
+                <p class="service-item-text">
+                  Enabling end-to-end AI inferencing solution productization for AMD's CPU/NPU/Embedded devices, with expertise in usability analysis and performance data generation of Model Inferencing flow.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg" alt="Mobile app icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Computer Vision & Deep Learning</h4>
+                <p class="service-item-text">
+                  Developing foundation models for performance on hardware through efficient architecture. Expertise in quantization, optimization, and tuning performance of Deep Learning models on Vision DSP.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg" alt="Design icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Product Development</h4>
+                <p class="service-item-text">
+                  Developing benchmarking plans to support robust product development. Engaging with software developers to work on product development, analyzing product specification/usability, and understanding customer pain points.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </section>
+
+      </article>
+
+      <!-- RESUME -->
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Work Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">MTS Product Engineer, AI Inference</h4>
+              <span>AMD • 2024 — Present</span>
+              <p class="timeline-text">
+                • Enabling end-to-end AI inferencing solution productization for AMD's CPU/NPU/Embedded devices<br>
+                • Conducting usability analysis and performance data generation of Model Inferencing flow<br>
+                • Developing benchmarking plans to support robust product development<br>
+                • Engaging with software developers to work on product development, analyzing product specification/usability, and understanding customer pain points<br>
+                • Research and develop guidelines for advanced quantization techniques to optimize AI models for deployment on
+                AMD CPU/GPU/NPU devices, ensuring high performance and reduced resource consumption.<br>
+                • Understanding the product usage in a holistic way to discover the possible customer pain points in software
+                components and ecosystems (Compiler, Quantizer, Optimizer, Runtime, Profiler, Visualizer, Debugger etc.)<br>
+                • Develop benchmarking plans to support robust product development<br>
+                • Interact with internal and external customers to understand their issues, helping them to enable their work 
+                ow<br>
+                • Collaborate with the sales and marketing teams, R&D on strategic business engagements.<br>
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Senior Software Engineer, Computer Vision</h4>
+              <span>Magic Leap • 2020 — 2024</span>
+              <p class="timeline-text">
+                • Developed foundation models for performance on hardware through efficient architecture<br>
+                • Specialized in quantization, optimization, and tuning performance of Deep Learning models on Vision DSP<br>
+                • Solved complex challenges of developing and optimizing deep learning models on resource-constrained hardware<br>
+                • Worked with Digital Signal Processors (DSPs) and Neural Processing Units (NPU)
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Lead Design Engineer</h4>
+              <span>Cadence Design Systems • 2017 — 2020</span>
+              <p class="timeline-text">
+                • Individual contributor to the AI and Deep learning team in Cadence's Tensilica business unit<br>
+                • Primarily involved in development of deep learning and computer vision application on Tensilia Vision line of DSPs<br>
+                • Developed DSP implementation for Classification, Super Resolution, Object Detection and Segmentation Networks<br>
+                • Optimize implementation to driver highly visible performance metric (e.g. latency, memory, bandwidth)<br>
+                • Acquisition of a deep knowledge of OpenVX and Neural Networks API standards for efficient implementation<br>
+                • Participation in the definition of next-generation Vision platforms and DSP architectures
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">ORISE Reasearch Fellow</h4>
+              <span>FDA - Center of Devices and Radiology Health (CDRH) • 2016 — 2017</span>
+              <p class="timeline-text">
+                • Development of mass fever screening for detection and preventing spread of viral diseases<br>
+                • Non-rigid image registration algorithm for thermal and visible image registration<br>
+                • Feature detection in visible images using trained cascade classifier using neural networks<br>
+                • Development of advanced numerical methods predicting temperature using Data Analytic Toolbox<br>
+                • Extensive analysis of different effects of registration models and other variables on performance of system
+              </p>
+            </li>
+
+          </ol>
+        </section>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Master of Science in Electrical and Computer Engineering</h4>
+              <span>University of Maryland, College Park </span>
+              <p class="timeline-text">
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Bachelor of Technology in Electronics and Communication Engineering</h4>
+              <span>National Institute of Technology - Warangal </span>
+              <p class="timeline-text">
+              </p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="medal-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Certifications & Skills</h3>
+          </div>
+
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Self-Driving Car Specialization</h4>
+              <span>Coursera (deeplearning.ai) • 2021</span>
+              <p class="timeline-text">
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Generative Adversarial Networks (GANs) Specialization</h4>
+              <span>Coursera (deeplearning.ai) • 2021</span>
+              <p class="timeline-text">
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">AI for Medical Diagnosis</h4>
+              <span>Coursera (deeplearning.ai) • 2021</span>
+              <p class="timeline-text">
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Technical Skills</h4>
+              <p class="timeline-text" style="margin-top: 10px;">
+                <strong>Programming:</strong> Python, C/C++, OpenCL, OpenVX, TensorFlow, PyTorch, OpenCV<br>
+                <strong>AI/ML:</strong> Computer Vision, Deep Learning, Model Optimization, Quantization<br>
+                <strong>Hardware:</strong> DSPs, NPUs, Edge Computing, Embedded Systems<br>
+                <strong>Tools:</strong> Git, Docker, Linux, Jupyter, Visual Studio
+              </p>
+            </li>
+          </ol>
+        </section>
+
+      </article>
+
+      <!-- BLOGS -->
+      <article class="blogs" data-page="blogs">
+
+        <header>
+          <h2 class="h2 article-title">Blogs</h2>
+        </header>
+
+        <section class="blog-posts">
+          <ul class="blog-posts-list">
+            <li class="blog-post-item">
+              <figure class="blog-banner-box">
+                <img src="./assets/images/amd-blog.jpg" alt="AMD Quark Quantizer for Efficient AI Model Deployment" loading="lazy">
+              </figure>
+              
+              <div class="blog-content">
+                <div class="blog-meta">
+                  <p class="blog-category">AMD Developer</p>
+                  <span class="dot"></span>
+                  <time datetime="2023-12-10">Dec 10, 2023</time>
+                </div>
+                
+                <h3 class="h3 blog-item-title">AMD Quark Quantizer for Efficient AI Model Deployment</h3>
+                
+                <p class="blog-text">
+                  This blog introduces the new AMD Quark Quantizer and highlights some of the features it offers, providing a foundation for exploring various other quantization techniques and mechanisms supported by AMD Quark.               
+                </p>
+                
+                <a href="https://www.amd.com/en/developer/resources/technical-articles/amd-quark-quantizer-for-efficient-ai-model-deployment.html" target="_blank" class="btn-link">
+                  <span>Read More</span>
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </a>
+              </div>
+            </li>
+            
+            <li class="blog-post-item">
+              <figure class="blog-banner-box">
+                <img src="./assets/images/aiai-edge-ai-blog.png" alt="AI inference in edge computing" loading="lazy">
+              </figure>
+              
+              <div class="blog-content">
+                <div class="blog-meta">
+                  <p class="blog-category">Edge Computing</p>
+                  <span class="dot"></span>
+                  <time datetime="2024-03-15">Mar 15, 2024</time>
+                </div>
+                
+                <h3 class="h3 blog-item-title">AI Inference in Edge Computing: Benefits and Use Cases</h3>
+                
+                <p class="blog-text">
+                  Exploring the advantages of running AI inference at the edge and examining real-world applications across various industries.                
+                </p>
+                
+                <a href="https://www.aiacceleratorinstitute.com/ai-inference-in-edge-computing-benefits-and-use-cases/" target="_blank" class="btn-link">
+                  <span>Read More</span>
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </a>
+              </div>
+            </li>
+            
+            <li class="blog-post-item">
+              <figure class="blog-banner-box">
+                <img src="./assets/images/aiai-hardware-accelerator.png" alt="Hardware Accelerators for AI" loading="lazy">
+              </figure>
+              
+              <div class="blog-content">
+                <div class="blog-meta">
+                  <p class="blog-category">Hardware Acceleration</p>
+                  <span class="dot"></span>
+                  <time datetime="2024-02-20">Feb 20, 2024</time>
+                </div>
+                
+                <h3 class="h3 blog-item-title">Improving AI Inference Performance with Hardware Accelerators</h3>
+                
+                <p class="blog-text">
+                  An in-depth look at how specialized hardware accelerators are transforming AI inference performance and efficiency.                
+                </p>
+                
+                <a href="https://www.aiacceleratorinstitute.com/improving-ai-inference-performance-with-hardware-accelerators/" target="_blank" class="btn-link">
+                  <span>Read More</span>
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </a>
+              </div>
+            </li>
+
+            <li class="blog-post-item">
+              <figure class="blog-banner-box">
+                <img src="./assets/images/edgeai-quant-analysis.png" alt="Quantization Analysis" loading="lazy">
+              </figure>
+              
+              <div class="blog-content">
+                <div class="blog-meta">
+                  <p class="blog-category">Edge AI</p>
+                  <span class="dot"></span>
+                  <time datetime="2024-04-05">Apr 5, 2024</time>
+                </div>
+                
+                <h3 class="h3 blog-item-title">Quantization of Convolutional Neural Networks: Quantization Analysis</h3>
+                
+                <p class="blog-text">
+                  A technical exploration of quantization analysis techniques for convolutional neural networks and their impact on model performance.                
+                </p>
+                
+                <a href="https://www.edge-ai-vision.com/2024/04/quantization-of-convolutional-neural-networks-quantization-analysis/" target="_blank" class="btn-link">
+                  <span>Read More</span>
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </a>
+              </div>
+            </li>
+
+            <li class="blog-post-item">
+              <figure class="blog-banner-box">
+                <img src="./assets/images/edgeai-model-quant.png" alt="Model Quantization" loading="lazy">
+              </figure>
+              
+              <div class="blog-content">
+                <div class="blog-meta">
+                  <p class="blog-category">Edge AI</p>
+                  <span class="dot"></span>
+                  <time datetime="2024-02-15">Feb 15, 2024</time>
+                </div>
+                
+                <h3 class="h3 blog-item-title">Quantization of Convolutional Neural Networks: Model Quantization</h3>
+                
+                <p class="blog-text">
+                  Examining the principles and techniques of model quantization for convolutional neural networks to optimize deployment.                
+                </p>
+                
+                <a href="https://www.edge-ai-vision.com/2024/02/quantization-of-convolutional-neural-networks-model-quantization/" target="_blank" class="btn-link">
+                  <span>Read More</span>
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </a>
+              </div>
+            </li>
+
+            <li class="blog-post-item">
+              <figure class="blog-banner-box">
+                <img src="./assets/images/edgeai-quant-theory.jpg" alt="Practical CNN Quantization: Theory to Practice" loading="lazy">
+              </figure>
+              
+              <div class="blog-content">
+                <div class="blog-meta">
+                  <p class="blog-category">Edge AI</p>
+                  <span class="dot"></span>
+                  <time datetime="2023-12-20">Dec 20, 2023</time>
+                </div>
+                
+                <h3 class="h3 blog-item-title">From Theory to Practice: Quantizing Convolutional Neural Networks for Practical Deployment</h3>
+                
+                <p class="blog-text">
+                  Bridging the gap between theoretical quantization techniques and practical deployment considerations for convolutional neural networks.                
+                </p>
+                
+                <a href="https://www.edge-ai-vision.com/2023/12/from-theory-to-practice-quantizing-convolutional-neural-networks-for-practical-deployment/" target="_blank" class="btn-link">
+                  <span>Read More</span>
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+      </article>
+
+      <!-- PROJECTS -->
+      <article class="projects" data-page="projects">
+
+        <header>
+          <h2 class="h2 article-title">Projects</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Web Development</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Mobile Apps</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Cloud Solutions</button>
+            </li>
+          </ul>
+
+          <ul class="project-list">
+
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#" class="project-link">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-1.jpg" alt="E-commerce Platform" loading="lazy">
+                </figure>
+                <h3 class="project-title">E-commerce Platform</h3>
+                <p class="project-category">Web Development</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="mobile apps">
+              <a href="#" class="project-link">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-2.jpg" alt="Fitness Tracking App" loading="lazy">
+                </figure>
+                <h3 class="project-title">Fitness Tracking App</h3>
+                <p class="project-category">Mobile Apps</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="cloud solutions">
+              <a href="#" class="project-link">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-3.jpg" alt="Serverless Data Pipeline" loading="lazy">
+                </figure>
+                <h3 class="project-title">Serverless Data Pipeline</h3>
+                <p class="project-category">Cloud Solutions</p>
+              </a>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#" class="project-link">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-4.jpg" alt="CRM Dashboard" loading="lazy">
+                </figure>
+                <h3 class="project-title">CRM Dashboard</h3>
+                <p class="project-category">Web Development</p>
+              </a>
+            </li>
+
+          </ul>
+        </section>
+
+      </article>
+
+      <!-- SKILLS -->
+      <article class="skills" data-page="skills">
+
+        <header>
+          <h2 class="h2 article-title">Skills</h2>
+        </header>
+
+        <section class="skill">
+          <h3 class="h3 skills-title">Technical Skills</h3>
+          
+          <ul class="skills-list content-card">
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">JavaScript/TypeScript</h5>
+                <data value="90">90%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">React/Angular</h5>
+                <data value="85">85%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Node.js/Express</h5>
+                <data value="80">80%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">AWS/Azure/GCP</h5>
+                <data value="85">85%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Docker/Kubernetes</h5>
+                <data value="75">75%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 75%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Python/Django</h5>
+                <data value="70">70%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="skill">
+          <h3 class="h3 skills-title">Soft Skills</h3>
+          
+          <ul class="skills-list content-card">
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Team Leadership</h5>
+                <data value="90">90%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Project Management</h5>
+                <data value="85">85%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Problem Solving</h5>
+                <data value="95">95%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 95%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Communication</h5>
+                <data value="85">85%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+      </article>
+
+      <!-- CONTACT -->
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100939.98555098464!2d-122.50764017948553!3d37.75781499657613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1651955214352!5m2!1sen!2sus"
+              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="#" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <!-- custom js link -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- ionicon link -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
