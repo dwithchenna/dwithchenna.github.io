@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dwithchenna.github.io/sitemap.xml
